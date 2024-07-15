@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Color de Cuadrado</title>
+    <!-- Agregar Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div id="cuadrado" class="w-40 h-40 bg-gray-400 m-4 flex items-center justify-center text-white text-lg font-bold">
+        Gris
+    </div>
+    <button id="botonCambiar" class="bg-blue-500 text-white px-4 py-2 rounded">Cambiar</button>
+
+    <div id="cuadrado2" class="w-80 h-80 bg-gray-400 m-4 flex items-center justify-center text-lg text-gray-700 font-bold">
+        
+    </div>
+    <input type="text" id="textoInput" class="mt-4 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Escribe algo...">
+    <button id="botonBorrar" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded focus:outline-none">Reset</button>
+    <div class="w-80 mt-12 p-6 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold mb-4">Calculadora de IMC</h1>
+        <div class="flex flex-col mb-4">
+            <label for="inputPeso" class="text-lg font-medium">Peso (kg):</label>
+            <input type="number" id="inputPeso" class="w-full h-10 px-4 mt-1 border border-gray-300 rounded-md" placeholder="Ingrese su peso">
+        </div>
+        <div class="flex flex-col mb-8">
+            <label for="inputAltura" class="text-lg font-medium">Altura (m):</label>
+            <input type="number" id="inputAltura" class="w-full h-10 px-4 mt-1 border border-gray-300 rounded-md" placeholder="Ingrese su altura">
+        </div>
+        <button id="botonCalcular" class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600">Calcular IMC</button>
+        <div class="mt-8">
+            <label for="resultadoIMC" class="text-lg font-medium">Su IMC es:</label>
+            <input type="text" id="resultadoIMC" class="w-full h-10 px-4 mt-1 border border-gray-300 rounded-md" readonly>
+        </div>
+    </div>
+    <div class="container mt-12 max-w-md p-4 bg-white rounded-lg shadow-lg">
+      <h1 class="text-3xl font-bold text-center mb-4">Conversor de Monedas</h1>
+    
+      <div class="flex flex-col space-y-4">
+        <div class="flex items-center space-x-4">
+          <label for="usdAmount" class="text-gray-700">Monto en Dólares:</label>
+          <input type="number" id="usdAmount" placeholder="Ingrese el monto en dólares" class="px-3 py-2 border border-gray-300 rounded-md w-40 focus:outline-none focus:border-blue-500">
+        </div>
+    
+        <div class="flex items-center space-x-4">
+          <label for="localAmount" class="text-gray-700">Monto en Moneda Local:</label>
+          <input type="number" id="localAmount" placeholder="Ingrese el monto en moneda local" class="px-3 py-2 border border-gray-300 rounded-md w-40 focus:outline-none focus:border-blue-500">
+        </div>
+    
+        <div class="flex justify-center space-x-4">
+          <button onclick="convert('usdToLocal')" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none">Convertir a Moneda Local</button>
+          <button onclick="convert('localToUSD')" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none">Convertir a Dólares</button>
+          <button onclick="clearInputs()" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 focus:outline-none">Borrar</button>
+        </div>
+    
+        <div class="text-center mt-4">
+          <p id="resultText" class="text-gray-800"></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
